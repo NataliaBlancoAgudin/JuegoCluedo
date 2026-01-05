@@ -2,80 +2,68 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Expediente: Caso Paula</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Special+Elite&family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expediente Oviedo: El Caso de Paula</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Special+Elite&family=EB+Garamond&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="paper-overlay"></div>
+    <div class="paper-texture"></div>
     
-    <div class="wrapper">
-        <div class="container">
-            <header>
-                <div class="top-meta">
-                    <span class="file-id">REF: OV-1952-P</span>
-                    <div class="stamp">TOP SECRET</div>
-                </div>
-                <h1>CLUEDO</h1>
-                <p class="subtitle">Misterio en la Ciudad de Oviedo</p>
-                
-                <div class="victim-file">
-                    <p><strong>ESTADO DEL CASO:</strong> ABIERTO</p>
-                    <p><strong>VÍCTIMA:</strong> PAULA</p>
-                    <p><strong>LUGAR:</strong> DESCONOCIDO</p>
-                </div>
-            </header>
-
-            <section class="narrative">
-                <p class="typewriter">La niebla baja desde el Naranco y envuelve la ciudad. Paula no ha llegado a su cita. Los indicios apuntan a un juego sucio en los rincones más emblemáticos de Oviedo. Tú eres el inspector jefe a cargo. No falles.</p>
-            </section>
-
-            <section class="rules">
-                <h2>PROTOCOLO DE INVESTIGACIÓN</h2>
-                
-                <div class="rule-item">
-                    <span class="number">01.</span>
-                    <div class="text">
-                        <h3>El Objetivo</h3>
-                        <p>Descifrar tres incógnitas: ¿Quién fue? ¿Qué arma usó? ¿Dónde ocurrió?</p>
-                    </div>
-                </div>
-
-                <div class="rule-item">
-                    <span class="number">02.</span>
-                    <div class="text">
-                        <h3>Sugerencias</h3>
-                        <p>Al entrar en una habitación (Campoamor, Reconquista, Fontán...), lanza tu sospecha. Tus colegas deberán mostrarte pruebas si las tienen.</p>
-                    </div>
-                </div>
-
-                <div class="rule-item">
-                    <span class="number">03.</span>
-                    <div class="text">
-                        <h3>Acusación</h3>
-                        <p>Solo puedes acusar una vez. Si fallas, entregas tu placa y quedas fuera del caso.</p>
-                    </div>
-                </div>
-            </section>
-
-            <div class="interactive">
-                <button onclick="revelarPista()" id="btn-pista">REVELAR PISTA CONFIDENCIAL</button>
-                <p id="pista-secreta" class="hidden">"El culpable nunca deja el paraguas en el Teatro..."</p>
+    <div class="container">
+        <header>
+            <div class="stamp">CONFIDENCIAL</div>
+            <p class="file-number">EXPEDIENTE Nº 1948-OV-P</p>
+            <h1>MISTERIO EN OVIEDO</h1>
+            <div class="victim-profile">
+                <p><strong>VÍCTIMA:</strong> PAULA</p>
+                <p><strong>ÚLTIMA VEZ VISTA:</strong> Paseo de los Álamos</p>
             </div>
+        </header>
 
-            <footer>
-                <p>COMISARÍA DE POLICÍA DE OVIEDO</p>
-                <p>Distrito Centro - 1952</p>
-            </footer>
-        </div>
+        <main>
+            <section class="intro">
+                <p class="typewriter">La noche ha caído sobre Oviedo. El silencio en el Teatro Campoamor es sepulcral. Paula ha desaparecido en extrañas circunstancias y solo tú puedes descubrir la verdad antes de que el culpable escape por la Autovía de Castilla.</p>
+            </section>
+
+            <section class="instructions">
+                <h2><span class="red-line"></span>REGLAS DE LA INVESTIGACIÓN</h2>
+                
+                <div class="rule-box">
+                    <h3>I. El Objetivo</h3>
+                    <p>Debes determinar quién acabó con la tranquilidad de Paula, con qué objeto y en qué rincón de la ciudad ocurrió el fatal desenlace.</p>
+                </div>
+
+                <div class="rule-box">
+                    <h3>II. El Despliegue</h3>
+                    <p>Se colocan las cartas de 1 Sospechoso, 1 Arma y 1 Lugar en el sobre central. El resto se reparte entre los investigadores. Lo que tú tienes en la mano, nadie más lo sabe.</p>
+                </div>
+
+                <div class="rule-box">
+                    <h3>III. Sugerencias en Oviedo</h3>
+                    <p>Al entrar en una localización (<em>El Fontán, El Reconquista o el Campoamor</em>), debes lanzar una hipótesis. El jugador a tu izquierda debe intentar refutarla mostrándote una carta en secreto.</p>
+                </div>
+
+                <div class="rule-box">
+                    <h3>IV. La Acusación Final</h3>
+                    <p>Solo cuando estés 100% seguro, dirígete al centro del tablero y formula tu acusación. Si fallas, tu carrera como detective habrá terminado para siempre.</p>
+                </div>
+            </section>
+
+            <section class="map-clues">
+                <h2>LOCALIZACIONES CLAVE</h2>
+                <ul>
+                    <li>Teatro Campoamor</li>
+                    <li>Hotel de la Reconquista</li>
+                    <li>Mercado de El Fontán</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>Comisaría General de Asturias - Sección de Investigación Criminal</p>
+            <p>© 1948 Todos los derechos reservados.</p>
+        </footer>
     </div>
-
-    <script>
-        function revelarPista() {
-            document.getElementById('pista-secreta').classList.toggle('hidden');
-            document.getElementById('btn-pista').innerText = "PISTA REVELADA";
-        }
-    </script>
 </body>
 </html>
