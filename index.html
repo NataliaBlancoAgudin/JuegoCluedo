@@ -6,6 +6,7 @@
     <title>Cluedo: El Caso de Paula</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -29,51 +30,124 @@
             <h3>II. Preparación de la Partida</h3>
             <ol>
                 <li>Separad las cartas en tres montones: Sospechosos, Armas y Lugares.</li>
-                <li>Sin que nadie mire, coged <strong>una carta de cada montón</strong> y metedlas en el Sobre del Crimen. Nadie debe saber cuáles son.</li>
-                <li>Mezclad el resto de cartas todas juntas y repartidlas entre los jugadores hasta que se acaben.</li>
-                <li>Cada jugador recibe una hoja de notas y un peón. Colocad los peones en la casilla de salida correspondiente.</li>
+                <li>Sin que nadie mire, coged <strong>una carta de cada montón</strong> y metedlas en el Sobre del Crimen.</li>
+                <li>Mezclad el resto de cartas todas juntas y repartidlas entre los jugadores.</li>
+                <li>Cada jugador recibe una hoja de notas y un peón en la casilla de salida.</li>
             </ol>
         </section>
 
         <section class="juego">
             <h3>III. Cómo se juega el turno</h3>
-            <p>En tu turno, lanza los dados y mueve tu ficha por las casillas del tablero. Puedes moverte en vertical u horizontal (nunca en diagonal).</p>
-            
+            <p>En tu turno, lanza los dados y mueve tu ficha por las casillas (vertical u horizontal, nunca diagonal).</p>
             <h4>Entrar en una habitación</h4>
-            <p>Si tu tirada te permite llegar a una habitación (ej. <em>Teatro Campoamor</em>), entra en ella. Al entrar, tu movimiento termina y debes formular una <strong>Sugerencia</strong>.</p>
+            <p>Si llegas a una habitación (ej. <em>Teatro Campoamor</em>), entra y formula una <strong>Sugerencia</strong>.</p>
         </section>
 
         <section class="mecanica-clave">
             <h3>IV. La Sugerencia (Investigar)</h3>
-            <p>Cuando estás dentro de una habitación, debes traer al sospechoso y al arma a esa habitación para interrogar.</p>
-            <p><em>Ejemplo: Estás en el Teatro Campoamor. Dices: "Sugiero que fueron <strong>Irene, Thalía y Natalia</strong> con la <strong>Llave Inglesa</strong> en el <strong>Teatro Campoamor</strong>".</em></p>
-            
+            <p>Debes traer al sospechoso y al arma a esa habitación.</p>
+            <p><em>Ejemplo: "Sugiero que fueron <strong>Irene, Thalía y Natalia</strong> con la <strong>Llave Inglesa</strong> en el <strong>Teatro Campoamor</strong>".</em></p>
             <h4>¿Qué hacen los demás?</h4>
-            <p>Empezando por el jugador a tu izquierda:</p>
             <ul>
-                <li>Si tiene alguna de las 3 cartas que has nombrado, <strong>debe enseñarte UNA (y solo una)</strong> en secreto.</li>
-                <li>Si no tiene ninguna, pasa el turno al siguiente jugador, que deberá intentar desmentirte.</li>
-                <li>En cuanto alguien te enseña una carta, marcas en tu hoja que esa carta <strong>NO</strong> está en el sobre. Tu turno termina.</li>
+                <li>El jugador a tu izquierda mira sus cartas. Si tiene alguna de las 3 que has dicho, <strong>te enseña UNA en secreto</strong>.</li>
+                <li>Si no tiene ninguna, pasa al siguiente jugador.</li>
+                <li>Si te enseñan una carta, márcala en tu hoja. Tu turno termina.</li>
             </ul>
         </section>
 
         <section class="final">
             <h3>V. La Acusación (Resolver)</h3>
-            <p>Solo cuando creas haber tachado todas las posibilidades y sepas exactamente qué cartas hay en el sobre, puedes hacer una <strong>Acusación</strong>.</p>
+            <p>Solo cuando sepas la verdad, haz una <strong>Acusación</strong>.</p>
             <ul>
-                <li>Debes decirlo en voz alta: "Acuso a [Sospechoso] con [Arma] en [Lugar]".</li>
-                <li>Coge el Sobre Confidencial y mira el contenido <strong>en secreto</strong>.</li>
+                <li>Di en voz alta: "Acuso a [X] con [Y] en [Z]".</li>
+                <li>Mira el sobre en secreto.</li>
             </ul>
             <div class="alert">
-                <p><strong>¿Acertaste?</strong> ¡Enseña las cartas! Has ganado la partida.</p>
-                <p><strong>¿Fallaste?</strong> Devuelve las cartas al sobre. Has perdido y estás eliminado (ya no puedes mover ni preguntar), pero debes seguir desmintiendo a los demás si tienes cartas.</p>
+                <p><strong>¿Acertaste?</strong> ¡Has ganado!</p>
+                <p><strong>¿Fallaste?</strong> Estás eliminado, devuelve las cartas al sobre.</p>
             </div>
+        </section>
+
+        <section class="dado-section">
+            <h3>Lanza el Dado</h3>
+            <div class="scene">
+                <div class="cube" id="dado3d">
+                    <div class="cube__face cube__face--1">
+                        <span class="dot center"></span>
+                    </div>
+                    <div class="cube__face cube__face--2">
+                        <span class="dot top-left"></span><span class="dot bottom-right"></span>
+                    </div>
+                    <div class="cube__face cube__face--3">
+                        <span class="dot top-left"></span><span class="dot center"></span><span class="dot bottom-right"></span>
+                    </div>
+                    <div class="cube__face cube__face--4">
+                        <span class="dot top-left"></span><span class="dot top-right"></span>
+                        <span class="dot bottom-left"></span><span class="dot bottom-right"></span>
+                    </div>
+                    <div class="cube__face cube__face--5">
+                        <span class="dot top-left"></span><span class="dot top-right"></span>
+                        <span class="dot center"></span>
+                        <span class="dot bottom-left"></span><span class="dot bottom-right"></span>
+                    </div>
+                    <div class="cube__face cube__face--6">
+                        <span class="dot top-left"></span><span class="dot top-right"></span>
+                        <span class="dot mid-left"></span><span class="dot mid-right"></span>
+                        <span class="dot bottom-left"></span><span class="dot bottom-right"></span>
+                    </div>
+                </div>
+            </div>
+            <button id="btnLanzar">LANZAR DADO</button>
+            <p id="resultadoTexto">Resultado: -</p>
         </section>
 
         <footer>
             <p>Expediente Nº 1948 - Oviedo</p>
             <p>Buena suerte, detectives.</p>
         </footer>
-    </div>
+    </div> <script>
+        const dado = document.getElementById('dado3d');
+        const btn = document.getElementById('btnLanzar');
+        const resultadoTexto = document.getElementById('resultadoTexto');
+
+        // LÓGICA CORREGIDA:
+        // Para enseñar una cara, hay que girar el CUBO al contrario de donde está la cara.
+        const rotaciones = {
+            1: 'rotateX(0deg) rotateY(0deg)',    // Cara 1 está al frente -> No girar
+            2: 'rotateY(-90deg)',                // Cara 2 está a la derecha -> Girar cubo a la izquierda
+            3: 'rotateY(180deg)',                // Cara 3 está atrás -> Dar media vuelta
+            4: 'rotateY(90deg)',                 // Cara 4 está a la izquierda -> Girar cubo a la derecha
+            5: 'rotateX(-90deg)',                // Cara 5 está arriba -> Girar cubo hacia abajo
+            6: 'rotateX(90deg)'                  // Cara 6 está abajo -> Girar cubo hacia arriba
+        };
+
+        btn.addEventListener('click', () => {
+            btn.disabled = true;
+            resultadoTexto.textContent = "Rodando...";
+            
+            // 1. Generar número aleatorio REAL (1 al 6)
+            const resultado = Math.floor(Math.random() * 6) + 1;
+
+            // 2. Resetear animación para poder relanzar
+            dado.style.transition = 'none'; // Quitar transición para el reset instantáneo
+            dado.style.transform = 'translateZ(-50px) rotateX(0deg) rotateY(0deg)';
+            
+            // Forzar reflujo (necesario para que el navegador sepa que ha cambiado)
+            void dado.offsetWidth;
+
+            // 3. Activar animación de giro loco
+            dado.style.animation = 'rodar 1s ease-out forwards';
+
+            // 4. Mostrar resultado final
+            setTimeout(() => {
+                dado.style.animation = 'none'; // Parar animación loca
+                dado.style.transition = 'transform 0.5s ease-out'; // Transición suave a la posición final
+                dado.style.transform = 'translateZ(-50px) ' + rotaciones[resultado];
+                
+                resultadoTexto.textContent = "Resultado: " + resultado;
+                btn.disabled = false;
+            }, 1000);
+        });
+    </script>
 </body>
 </html>
