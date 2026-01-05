@@ -97,19 +97,26 @@ footer {
     opacity: 0.8;
 }
 
-/* === DADO 3D (Corregido) === */
+/* =========================================
+   ESTILOS DEL DADO 3D (CORREGIDO PARA MÓVIL)
+========================================= */
 .dado-section {
     text-align: center;
     margin-top: 40px;
     border-top: 2px solid #5d4037;
     padding-top: 20px;
+    /* Esto asegura que la sección esté por encima del fondo */
+    position: relative; 
+    z-index: 5;
 }
 
 .scene {
     width: 100px;
     height: 100px;
     margin: 30px auto;
-    perspective: 400px;
+    perspective: 600px; /* Aumentado un poco para mejor visión en móvil */
+    position: relative;
+    z-index: 10; /* Forzamos a que esté muy por encima */
 }
 
 .cube {
@@ -117,12 +124,22 @@ footer {
     height: 100%;
     position: relative;
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d; /* Vital para iOS */
+    
+    /* Posición inicial */
     transform: translateZ(-50px);
+    -webkit-transform: translateZ(-50px);
 }
 
+/* Animación corregida con prefijos */
 @keyframes rodar {
-    0% { transform: translateZ(-50px) rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
-    100% { transform: translateZ(-50px) rotateX(720deg) rotateY(1080deg) rotateZ(360deg); }
+    0% { transform: translateZ(-50px) rotateX(0deg) rotateY(0deg); }
+    100% { transform: translateZ(-50px) rotateX(720deg) rotateY(1080deg); }
+}
+
+@-webkit-keyframes rodar {
+    0% { -webkit-transform: translateZ(-50px) rotateX(0deg) rotateY(0deg); }
+    100% { -webkit-transform: translateZ(-50px) rotateX(720deg) rotateY(1080deg); }
 }
 
 .cube__face {
@@ -137,17 +154,22 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     padding: 8px;
-    backface-visibility: hidden; /* Oculta las caras traseras para evitar bugs visuales */
+    
+    /* Importante: backface-visibility a veces da problemas en móvil, 
+       pero visible asegura que no desaparezcan */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
-/* POSICIONAMIENTO DE CARAS (Debe coincidir con el JS) */
-.cube__face--1  { transform: rotateY(  0deg) translateZ(50px); } /* Frente */
-.cube__face--2  { transform: rotateY( 90deg) translateZ(50px); } /* Derecha */
-.cube__face--3  { transform: rotateY(180deg) translateZ(50px); } /* Atrás */
-.cube__face--4  { transform: rotateY(-90deg) translateZ(50px); } /* Izquierda */
-.cube__face--5  { transform: rotateX( 90deg) translateZ(50px); } /* Arriba */
-.cube__face--6  { transform: rotateX(-90deg) translateZ(50px); } /* Abajo */
+/* POSICIONAMIENTO CON PREFIJOS */
+.cube__face--1  { transform: rotateY(  0deg) translateZ(50px); -webkit-transform: rotateY(  0deg) translateZ(50px); }
+.cube__face--2  { transform: rotateY( 90deg) translateZ(50px); -webkit-transform: rotateY( 90deg) translateZ(50px); }
+.cube__face--3  { transform: rotateY(180deg) translateZ(50px); -webkit-transform: rotateY(180deg) translateZ(50px); }
+.cube__face--4  { transform: rotateY(-90deg) translateZ(50px); -webkit-transform: rotateY(-90deg) translateZ(50px); }
+.cube__face--5  { transform: rotateX( 90deg) translateZ(50px); -webkit-transform: rotateX( 90deg) translateZ(50px); }
+.cube__face--6  { transform: rotateX(-90deg) translateZ(50px); -webkit-transform: rotateX(-90deg) translateZ(50px); }
 
+/* Resto de estilos del dado (puntos y botón) igual... */
 .dot {
     display: block;
     width: 16px;
@@ -159,7 +181,6 @@ footer {
     box-shadow: inset 1px 1px 2px rgba(0,0,0,0.5);
 }
 
-/* GRID DE PUNTOS */
 .center { grid-area: 2 / 2; }
 .top-left { grid-area: 1 / 1; }
 .top-right { grid-area: 1 / 3; }
@@ -180,18 +201,5 @@ footer {
     border-radius: 5px;
     box-shadow: 0 4px #4a1217;
     transition: all 0.1s;
-}
-
-#btnLanzar:active { box-shadow: 0 1px #4a1217; transform: translateY(3px); }
-#btnLanzar:disabled { background-color: #999; box-shadow: none; cursor: not-allowed; }
-
-#resultadoTexto {
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-top: 15px;
-}
-
-@media (max-width: 400px) {
-    h1 { font-size: 2rem; }
-    .container { padding: 15px; }
+    margin-top: 20px; /* Un poco de aire extra */
 }
